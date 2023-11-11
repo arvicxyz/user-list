@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:user_list/src/constants/colors.dart';
+import 'package:user_list/src/constants/dimens.dart';
 import 'package:user_list/src/constants/styles.dart';
 import 'package:user_list/src/core/extensions/string_extensions.dart';
 import 'package:user_list/src/features/user/providers/home_provider.dart';
@@ -47,7 +48,7 @@ class _DetailsViewState extends ConsumerState<DetailsView> {
                   )
                 : const SizedBox(),
             Container(
-              padding: const EdgeInsets.all(16),
+              padding: DimenConstants.detailsContainerPadding,
               child: Text(
                 _viewModel.user?.name ?? "",
                 style: StyleConstants.defaultLightTextStyle,

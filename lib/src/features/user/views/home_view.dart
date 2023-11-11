@@ -8,6 +8,7 @@ import 'package:user_list/src/core/logger.dart';
 import 'package:user_list/src/features/user/models/api/user_model.dart';
 import 'package:user_list/src/features/user/providers/home_provider.dart';
 import 'package:user_list/src/features/user/view_models/home_view_model.dart';
+import 'package:user_list/src/localization/app_locale.dart';
 import 'package:user_list/src/widgets/material_app_bar.dart';
 
 class HomeView extends ConsumerStatefulWidget {
@@ -30,9 +31,9 @@ class _HomeViewState extends ConsumerState<HomeView> {
   Widget build(BuildContext context) {
     var usersAsync = ref.watch(userFutureProvider);
     return Scaffold(
-      appBar: const MaterialAppBar(
+      appBar: MaterialAppBar(
         title: Text(
-          "User List",
+          AppLocale.of(context).userList,
           style: StyleConstants.titleTextStyle,
         ),
         overlayStyle: SystemUiOverlayStyle.light,
@@ -47,21 +48,21 @@ class _HomeViewState extends ConsumerState<HomeView> {
               var uniqueUsers = _viewModel.removeDuplicates(users);
               return _buildUserList(uniqueUsers);
             } else {
-              return const Center(
+              return Center(
                 child: Text(
-                  'No data available',
+                  AppLocale.of(context).noDataAvailable,
                   style: StyleConstants.defaultLightTextStyle,
                 ),
               );
             }
           },
           error: (err, stack) {
-            var errorMessage = 'Error: $err';
-            var stackMessage = 'Stack: $stack';
+            var errorMessage = '${AppLocale.of(context).error} $err';
+            var stackMessage = '${AppLocale.of(context).stack} $stack';
             Logger.logException(Exception('$errorMessage\n$stackMessage'));
             return Center(
               child: Text(
-                'Error: $errorMessage',
+                '${AppLocale.of(context).error} $errorMessage',
                 style: StyleConstants.defaultLightTextStyle,
               ),
             );
@@ -73,16 +74,16 @@ class _HomeViewState extends ConsumerState<HomeView> {
 
   Widget _buildUserList(List<UserModel> users) {
     return ListView.builder(
-      padding: const EdgeInsets.only(top: 4, bottom: 4),
+      padding: DimenConstants.userListPadding,
       itemCount: users.length,
       itemBuilder: ((context, index) {
         final user = users[index];
         return InkWell(
           onTap: () => _viewModel.navigateToDetailsView(context, user),
           child: Card(
-            margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+            margin: DimenConstants.userListCardMargin,
             child: Container(
-              padding: const EdgeInsets.all(8),
+              padding: DimenConstants.userListCardPadding,
               child: Row(
                 children: [
                   Expanded(

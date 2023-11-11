@@ -1,10 +1,7 @@
 {
     "appTitle": "Mobii - User List",
-    "login": "Login",
-    "email": "Email",
-    "password": "Password",
-    "dashboard": "Dashboard",
-    "home": "Home",
-    "settings": "Settings",
-    "logout": "Logout"
+    "userList": "User List",
+    "noDataAvailable": "No data available",
+    "error": "Error:",
+    "stack": "Stack:"
 }
