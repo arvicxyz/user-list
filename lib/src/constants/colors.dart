@@ -30,7 +30,7 @@ class ColorConstants {
   // Widget
 
   static const Color iconColor = whiteColor;
-  static const Color backgroundColor = whiteColor;
+  static const Color backgroundColor = Color(0xFFF7F7F7);
   static const Color buttonColor = accentColor;
   static const Color disabledButtonColor = Color(0xFF88BDDD);
   static const Color textFieldColor = Color(0xFFEFEFEF);

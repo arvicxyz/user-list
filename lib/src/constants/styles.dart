@@ -20,6 +20,12 @@ class StyleConstants {
     fontSize: 14,
   );
 
+  static const TextStyle titleTextStyle = TextStyle(
+    color: ColorConstants.whiteTextColor,
+    fontSize: 20,
+    fontWeight: FontWeight.bold,
+  );
+
   // Button Styles
 
   static const ButtonStyle buttonStyle = ButtonStyle(

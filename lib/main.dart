@@ -11,8 +11,8 @@ void main() {
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
-      statusBarBrightness: Brightness.dark,
-      statusBarIconBrightness: Brightness.dark,
+      statusBarBrightness: Brightness.light,
+      statusBarIconBrightness: Brightness.light,
     ),
   );
   ResponsiveScreen.init();
