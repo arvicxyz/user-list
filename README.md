@@ -1,4 +1,4 @@
-# user_list
+# Introduction
 
 A very simple list-detail project that showcases feature-first MVVM architecture with Riverpod.
 
