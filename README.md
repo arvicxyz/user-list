@@ -8,13 +8,13 @@ This project is made using Flutter as a test project last November 2023. It show
 
 ## Packages Used
 ```
-flutter_riverpod: ^2.3.4
-equatable: ^2.0.5
-http: ^1.1.0
-intl: ^0.18.0
-logger: ^2.0.2
-google_fonts: ^6.0.0
-flutter_svg: ^2.0.5
+riverpod
+equatable
+http
+intl
+logger
+google_fonts
+flutter_svg
 ```
 
 This project also uses [FVM - Flutter Version Management](https://fvm.app/) - a simple CLI to manage Flutter SDK versions.
